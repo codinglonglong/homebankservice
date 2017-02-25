@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/apimodels/__init__.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/apimodels/accountAPIModel.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/apimodels/loginAPIModel.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/apimodels/signupAPIModel.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/apis/__init__.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/apis/accountAPI.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/apis/loginAPI.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/apis/signupAPI.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/appbase.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/conf.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/daos/__init__.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/daos/accountDAO.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/daos/loginDAO.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/daos/signupDAO.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dbbuilder.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dbmodels/__init__.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dbmodels/accountDBModel.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dbmodels/summaryDBModel.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dbmodels/typeDBModel.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dbmodels/userDBModel.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/main.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tools/__init__.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tools/decorator.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tools/info.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tools/log.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tools/timetools.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tools/token.py" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>
