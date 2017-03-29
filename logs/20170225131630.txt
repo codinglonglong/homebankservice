@@ -1,6 +1,0 @@
-2017-02-25 13:16:30,884	INFO	main	<module>	Line:13	app started
-2017-02-25 13:16:30,901	INFO	_internal	_log	Line:87	 * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
-2017-02-25 13:16:38,049	INFO	_internal	_log	Line:87	192.168.99.1 - - [25/Feb/2017 13:16:38] "GET / HTTP/1.1" 200 -
-2017-02-25 13:16:38,791	INFO	_internal	_log	Line:87	192.168.99.1 - - [25/Feb/2017 13:16:38] "GET /swagger.json HTTP/1.1" 200 -
-2017-02-25 13:16:47,999	INFO	_internal	_log	Line:87	192.168.99.1 - - [25/Feb/2017 13:16:47] "POST /login/ HTTP/1.1" 200 -
-2017-02-25 13:16:55,820	INFO	_internal	_log	Line:87	192.168.99.1 - - [25/Feb/2017 13:16:55] "GET /account/1/77a0891f1f8e339d80c07507c23fdf90 HTTP/1.1" 200 -

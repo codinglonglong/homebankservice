@@ -1,5 +1,0 @@
-2017-02-25 13:18:28,514	INFO	main	<module>	Line:13	app started
-2017-02-25 13:18:28,533	INFO	_internal	_log	Line:87	 * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
-2017-02-25 13:18:28,808	INFO	_internal	_log	Line:87	192.168.99.1 - - [25/Feb/2017 13:18:28] "GET /account/1/77a0891f1f8e339d80c07507c23fdf90 HTTP/1.1" 200 -
-2017-02-25 13:18:31,600	INFO	_internal	_log	Line:87	192.168.99.1 - - [25/Feb/2017 13:18:31] "GET /account/2/77a0891f1f8e339d80c07507c23fdf90 HTTP/1.1" 200 -
-2017-02-25 13:18:34,861	INFO	_internal	_log	Line:87	192.168.99.1 - - [25/Feb/2017 13:18:34] "GET /account/3/77a0891f1f8e339d80c07507c23fdf90 HTTP/1.1" 200 -

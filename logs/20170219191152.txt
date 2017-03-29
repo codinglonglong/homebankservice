@@ -1,6 +1,0 @@
-2017-02-19 19:11:52,272	INFO	main	<module>	Line:13	app started
-2017-02-19 19:11:52,275	INFO	_internal	_log	Line:87	 * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
-2017-02-19 19:12:24,350	INFO	_internal	_log	Line:87	192.168.99.1 - - [19/Feb/2017 19:12:24] "GET /swaggerui/bower/swagger-ui/dist/images/throbber.gif HTTP/1.1" 200 -
-2017-02-19 19:12:24,375	INFO	_internal	_log	Line:87	192.168.99.1 - - [19/Feb/2017 19:12:24] "POST /login/ HTTP/1.1" 200 -
-2017-02-19 19:12:28,278	ERROR	accountDAO	getsummaryaccount	Line:41	type object 'Summary' has no attribute 'summary_int'
-2017-02-19 19:12:28,280	INFO	_internal	_log	Line:87	192.168.99.1 - - [19/Feb/2017 19:12:28] "GET /account/summary/f3c7771e6b2ea43221dd3440c11817c4 HTTP/1.1" 200 -

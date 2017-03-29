@@ -1,0 +1,61 @@
+2017-03-16 14:18:59,582	ERROR	pool	_finalize_fairy	Line:696	Exception during reset or similar
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/pool.py", line 687, in _finalize_fairy
+    fairy._reset(pool)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/pool.py", line 827, in _reset
+    self._reset_agent.rollback()
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/base.py", line 1612, in rollback
+    self._do_rollback()
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/base.py", line 1650, in _do_rollback
+    self.connection._rollback_impl()
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/base.py", line 703, in _rollback_impl
+    self._handle_dbapi_exception(e, None, None, None, None)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/base.py", line 1393, in _handle_dbapi_exception
+    exc_info
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/util/compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/base.py", line 701, in _rollback_impl
+    self.engine.dialect.do_rollback(self.connection)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/dialects/mysql/base.py", line 1572, in do_rollback
+    dbapi_connection.rollback()
+  File "/usr/local/lib/python2.7/dist-packages/mysql/connector/connection.py", line 859, in rollback
+    self._execute_query("ROLLBACK")
+  File "/usr/local/lib/python2.7/dist-packages/mysql/connector/connection.py", line 871, in _execute_query
+    self.cmd_query(query)
+  File "/usr/local/lib/python2.7/dist-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/usr/local/lib/python2.7/dist-packages/mysql/connector/connection.py", line 267, in _send_cmd
+    return self._socket.recv()
+  File "/usr/local/lib/python2.7/dist-packages/mysql/connector/network.py", line 243, in recv_plain
+    raise errors.InterfaceError(errno=2013)
+InterfaceError: (mysql.connector.errors.InterfaceError) 2013: Lost connection to MySQL server during query
+2017-03-16 14:18:59,622	INFO	_internal	_log	Line:87	192.168.1.101 - - [16/Mar/2017 14:18:59] "OPTIONS /login/ HTTP/1.1" 200 -
+2017-03-16 14:18:59,840	INFO	_internal	_log	Line:87	192.168.1.101 - - [16/Mar/2017 14:18:59] "POST /login/ HTTP/1.1" 200 -
+2017-03-16 14:18:59,981	INFO	_internal	_log	Line:87	192.168.1.101 - - [16/Mar/2017 14:18:59] "GET /account/1/b864297e25d716580cde8e888edf7f05 HTTP/1.1" 200 -
+2017-03-16 14:19:26,018	INFO	_internal	_log	Line:87	192.168.1.101 - - [16/Mar/2017 14:19:26] "OPTIONS /account/b864297e25d716580cde8e888edf7f05 HTTP/1.1" 200 -
+2017-03-16 14:19:26,028	INFO	_internal	_log	Line:87	192.168.1.101 - - [16/Mar/2017 14:19:26] "OPTIONS /account/b864297e25d716580cde8e888edf7f05 HTTP/1.1" 200 -
+2017-03-16 14:19:26,212	INFO	_internal	_log	Line:87	192.168.1.101 - - [16/Mar/2017 14:19:26] "POST /account/b864297e25d716580cde8e888edf7f05 HTTP/1.1" 200 -
+2017-03-16 14:19:27,073	INFO	_internal	_log	Line:87	192.168.1.101 - - [16/Mar/2017 14:19:27] "POST /account/b864297e25d716580cde8e888edf7f05 HTTP/1.1" 200 -
+2017-03-16 14:19:29,381	INFO	_internal	_log	Line:87	192.168.1.101 - - [16/Mar/2017 14:19:29] "GET /account/1/b864297e25d716580cde8e888edf7f05 HTTP/1.1" 200 -
+2017-03-16 14:19:33,692	INFO	_internal	_log	Line:87	192.168.1.101 - - [16/Mar/2017 14:19:33] "GET /account/1/b864297e25d716580cde8e888edf7f05 HTTP/1.1" 200 -
+2017-03-16 14:19:34,981	INFO	_internal	_log	Line:87	192.168.1.101 - - [16/Mar/2017 14:19:34] "GET /account/2/b864297e25d716580cde8e888edf7f05 HTTP/1.1" 200 -
+2017-03-16 14:19:36,872	INFO	_internal	_log	Line:87	192.168.1.101 - - [16/Mar/2017 14:19:36] "GET /account/2/b864297e25d716580cde8e888edf7f05 HTTP/1.1" 200 -
+2017-03-16 14:19:38,109	INFO	_internal	_log	Line:87	192.168.1.101 - - [16/Mar/2017 14:19:38] "GET /account/1/b864297e25d716580cde8e888edf7f05 HTTP/1.1" 200 -
+2017-03-16 14:19:39,941	INFO	_internal	_log	Line:87	192.168.1.101 - - [16/Mar/2017 14:19:39] "GET /account/summary/b864297e25d716580cde8e888edf7f05 HTTP/1.1" 200 -
+2017-03-16 16:28:45,986	INFO	_internal	_log	Line:87	192.168.1.101 - - [16/Mar/2017 16:28:45] "OPTIONS /login/ HTTP/1.1" 200 -
+2017-03-16 16:28:46,127	INFO	_internal	_log	Line:87	192.168.1.101 - - [16/Mar/2017 16:28:46] "POST /login/ HTTP/1.1" 200 -
+2017-03-16 16:28:46,281	INFO	_internal	_log	Line:87	192.168.1.101 - - [16/Mar/2017 16:28:46] "GET /account/1/4ecbd0d4adb71955c6cb9a326632bd86 HTTP/1.1" 200 -
+2017-03-16 16:29:04,363	INFO	_internal	_log	Line:87	192.168.1.101 - - [16/Mar/2017 16:29:04] "OPTIONS /account/4ecbd0d4adb71955c6cb9a326632bd86 HTTP/1.1" 200 -
+2017-03-16 16:29:04,552	INFO	_internal	_log	Line:87	192.168.1.101 - - [16/Mar/2017 16:29:04] "POST /account/4ecbd0d4adb71955c6cb9a326632bd86 HTTP/1.1" 200 -
+2017-03-16 16:29:07,748	INFO	_internal	_log	Line:87	192.168.1.101 - - [16/Mar/2017 16:29:07] "GET /account/1/4ecbd0d4adb71955c6cb9a326632bd86 HTTP/1.1" 200 -
+2017-03-16 16:29:11,067	INFO	_internal	_log	Line:87	192.168.1.101 - - [16/Mar/2017 16:29:11] "GET /account/1/4ecbd0d4adb71955c6cb9a326632bd86 HTTP/1.1" 200 -
+2017-03-16 16:29:12,051	INFO	_internal	_log	Line:87	192.168.1.101 - - [16/Mar/2017 16:29:12] "GET /account/2/4ecbd0d4adb71955c6cb9a326632bd86 HTTP/1.1" 200 -
+2017-03-16 16:29:14,784	INFO	_internal	_log	Line:87	192.168.1.101 - - [16/Mar/2017 16:29:14] "GET /account/2/4ecbd0d4adb71955c6cb9a326632bd86 HTTP/1.1" 200 -
+2017-03-16 16:29:15,741	INFO	_internal	_log	Line:87	192.168.1.101 - - [16/Mar/2017 16:29:15] "GET /account/1/4ecbd0d4adb71955c6cb9a326632bd86 HTTP/1.1" 200 -
+2017-03-16 16:54:59,801	INFO	_internal	_log	Line:87	192.168.1.101 - - [16/Mar/2017 16:54:59] "OPTIONS /account/4ecbd0d4adb71955c6cb9a326632bd86 HTTP/1.1" 200 -
+2017-03-16 16:54:59,992	INFO	_internal	_log	Line:87	192.168.1.101 - - [16/Mar/2017 16:54:59] "POST /account/4ecbd0d4adb71955c6cb9a326632bd86 HTTP/1.1" 200 -
+2017-03-16 16:55:03,146	INFO	_internal	_log	Line:87	192.168.1.101 - - [16/Mar/2017 16:55:03] "GET /account/1/4ecbd0d4adb71955c6cb9a326632bd86 HTTP/1.1" 200 -
+2017-03-16 17:04:03,316	INFO	_internal	_log	Line:87	192.168.1.101 - - [16/Mar/2017 17:04:03] "OPTIONS /account/4ecbd0d4adb71955c6cb9a326632bd86 HTTP/1.1" 200 -
+2017-03-16 17:04:03,443	INFO	_internal	_log	Line:87	192.168.1.101 - - [16/Mar/2017 17:04:03] "POST /account/4ecbd0d4adb71955c6cb9a326632bd86 HTTP/1.1" 200 -
+2017-03-16 17:04:06,558	INFO	_internal	_log	Line:87	192.168.1.101 - - [16/Mar/2017 17:04:06] "GET /account/1/4ecbd0d4adb71955c6cb9a326632bd86 HTTP/1.1" 200 -
+2017-03-16 17:04:33,780	INFO	_internal	_log	Line:87	192.168.1.101 - - [16/Mar/2017 17:04:33] "GET /account/summary/4ecbd0d4adb71955c6cb9a326632bd86 HTTP/1.1" 200 -

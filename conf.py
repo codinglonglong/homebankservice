@@ -6,4 +6,4 @@
 dbconnection = 'mysql+mysqlconnector://root:root@127.0.0.1:3306/homebank?charset=utf8'
 
 perpage = 10
-datelength = 1
+datelength = 2

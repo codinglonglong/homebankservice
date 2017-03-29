@@ -1,7 +1,9 @@
-import time
+from flask import Flask
+app = Flask(__name__)
 
-from tools.log import logger
+@app.route('/')
+def hello_world():
+    return 'Hello World!'
 
-while True:
-    logger.info("hello")
-    time.sleep(10)
+if __name__ == '__main__':
+    app.run()

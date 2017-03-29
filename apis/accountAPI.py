@@ -16,7 +16,7 @@ ns_account = api.namespace("account", description="账目管理")
 @ns_account.param("account_id", "账目编号")
 class AccountItem(Resource):
 
-    def delete(self, user_token, account_id):
+    def get(self, user_token, account_id):
         """
         Delete An Account
         """
