@@ -1,2 +1,0 @@
-2017-02-27 17:34:06,665	INFO	main	<module>	Line:13	app started
-2017-02-27 17:34:06,693	INFO	_internal	_log	Line:87	 * Running on http://0.0.0.0:9001/

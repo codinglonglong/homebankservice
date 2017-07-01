@@ -20,7 +20,7 @@ class Token:
         uuidstr = str(uuid.uuid1())
         timestr = str(time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time())))
         tokenbody = uuidstr + timestr
-        token = hashlib.md5(tokenbody).hexdigest()
+        token = hashlib.md5(tokenbody.encode("utf8")).hexdigest()
         return token
 
     @staticmethod
