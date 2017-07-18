@@ -1,6 +1,0 @@
-2017-05-25 14:54:15,272	INFO	_internal	_log	Line:87	192.168.1.103 - - [25/May/2017 14:54:15] "OPTIONS /login/ HTTP/1.1" 200 -
-2017-05-25 14:54:15,333	INFO	_internal	_log	Line:87	192.168.1.103 - - [25/May/2017 14:54:15] "POST /login/ HTTP/1.1" 200 -
-2017-05-25 14:54:15,633	INFO	_internal	_log	Line:87	192.168.1.103 - - [25/May/2017 14:54:15] "GET /account/1/c73636308b3fc868e11ca7aaf8f7af0a HTTP/1.1" 200 -
-2017-05-25 14:54:31,279	INFO	_internal	_log	Line:87	192.168.1.103 - - [25/May/2017 14:54:31] "OPTIONS /account/c73636308b3fc868e11ca7aaf8f7af0a HTTP/1.1" 200 -
-2017-05-25 14:54:31,889	INFO	_internal	_log	Line:87	192.168.1.103 - - [25/May/2017 14:54:31] "POST /account/c73636308b3fc868e11ca7aaf8f7af0a HTTP/1.1" 200 -
-2017-05-25 14:54:35,201	INFO	_internal	_log	Line:87	192.168.1.103 - - [25/May/2017 14:54:35] "GET /account/1/c73636308b3fc868e11ca7aaf8f7af0a HTTP/1.1" 200 -

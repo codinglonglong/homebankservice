@@ -1,6 +1,0 @@
-2017-05-28 01:27:02,341	INFO	_internal	_log	Line:87	192.168.1.104 - - [28/May/2017 01:27:02] "OPTIONS /login/ HTTP/1.1" 200 -
-2017-05-28 01:27:02,490	INFO	_internal	_log	Line:87	192.168.1.104 - - [28/May/2017 01:27:02] "POST /login/ HTTP/1.1" 200 -
-2017-05-28 01:27:02,675	INFO	_internal	_log	Line:87	192.168.1.104 - - [28/May/2017 01:27:02] "GET /account/1/7e3ebdc54eaea6b5f352466b6d020a0e HTTP/1.1" 200 -
-2017-05-28 01:27:37,989	INFO	_internal	_log	Line:87	192.168.1.104 - - [28/May/2017 01:27:37] "GET /account/borrow/7e3ebdc54eaea6b5f352466b6d020a0e HTTP/1.1" 200 -
-2017-05-28 01:27:38,441	INFO	_internal	_log	Line:87	192.168.1.104 - - [28/May/2017 01:27:38] "GET /account/summary/7e3ebdc54eaea6b5f352466b6d020a0e HTTP/1.1" 200 -
-2017-05-28 01:27:47,900	INFO	_internal	_log	Line:87	192.168.1.104 - - [28/May/2017 01:27:47] "GET /account/1/7e3ebdc54eaea6b5f352466b6d020a0e HTTP/1.1" 200 -
