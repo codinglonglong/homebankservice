@@ -6,6 +6,7 @@
 from appbase import global_api
 from flask_restplus import fields
 
+
 loginmodel = global_api.model('Login', {
     'user_email': fields.String(required=True, description="email"),
     'user_password': fields.String(required=True, description="password")

@@ -6,10 +6,12 @@
 import dbbuilder
 from appbase import global_app
 from tools.log import logger
+from conf import buildhost
+from conf import buildport
 import apis  # 引入有效的程序接口
 
 
 dbbuilder.create_db()
 logger.info("app started")
-global_app.run(host="0.0.0.0", port=9001, debug=True)
+global_app.run(host=buildhost, port=buildport, debug=True)
 

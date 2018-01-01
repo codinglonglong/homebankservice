@@ -4,9 +4,11 @@
 #
 
 from appbase import global_api as api
+from appbase import upload_parser
 from apimodels.accountAPIModel import accountmodel
 from daos.accountDAO import AccountDAO
 from flask_restplus import Resource
+from flask import request
 
 ns_account = api.namespace("account", description="账目管理")
 
@@ -67,3 +69,27 @@ class Summary(Resource):
         Get Summary Of Account
         """
         return AccountDAO.getsummaryaccount(user_token)
+
+
+@ns_account.route("/export/<string:user_token>")
+@ns_account.param("user_token", "用户标识")
+class Export(Resource):
+
+    def get(self, user_token):
+        """
+        Export Account Data
+        """
+        return AccountDAO.exportdata(user_token)
+
+
+@ns_account.route("/import/<string:user_token>")
+@ns_account.param("user_token", "用户标识")
+class Import(Resource):
+
+    @ns_account.expect(upload_parser)
+    def post(self, user_token):
+        """
+        Import Account Data
+        """
+        file = request.files['file']
+        return AccountDAO.importdata(user_token, file)

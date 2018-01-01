@@ -9,6 +9,8 @@ from sqlalchemy import distinct
 from appbase import global_db as db
 from dbmodels.accountDBModel import Account
 from dbmodels.summaryDBModel import Summary
+from dbmodels.typeDBModel import AccountType
+from dbmodels.userDBModel import User
 from tools.info import Info
 from tools.log import logger
 from conf import perpage
@@ -17,12 +19,58 @@ from tools.decorator import checktoken
 from tools.token import Token
 from tools.timetools import datestrtomonth
 from decimal import Decimal
+from conf import exportpath
+from conf import importpath
+from tools.excel import writetofile
+from conf import extvalid
+from werkzeug.utils import secure_filename
+from tools.excel import readfromfile
+
+
+def allowed_file(filename):
+    return "." in filename and filename.rsplit(".", 1)[1] in extvalid
 
 
 class AccountDAO:
 
     def __init__(self):
         pass
+
+    @staticmethod
+    @checktoken
+    def importdata(user_token, file):
+        summarylist = Summary.query.filter_by(summary_user=Token.getidbytoken(user_token)).all()
+        accountlist = Account.query.filter_by(account_user=Token.getidbytoken(user_token)).all()
+        for si in summarylist:
+            db.session.delete(si)
+        for ai in accountlist:
+            db.session.delete(ai)
+        file = file[0]
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            fileurl = "data/" + filename
+            file.save(fileurl)
+        if readfromfile(fileurl, Token.getidbytoken(user_token)):
+            db.session.commit()
+            return jsonify(Info(True, "数据导入成功！").tojson())
+        else:
+            return jsonify(Info(False, "数据导入失败！").tojson())
+
+    @staticmethod
+    @checktoken
+    def exportdata(user_token):
+        summarylist = db.session.query(
+            Summary.summary_month, Summary.summary_out, Summary.summary_in,
+            Summary.summary_lent, Summary.summary_borrow
+        ).filter(Summary.summary_user == Token.getidbytoken(user_token)).all()
+        writetofile("summarylist", summarylist, user_token)
+        accountlist = db.session.query(
+            Account.account_item, Account.account_money, Account.account_type,
+            Account.account_date, Account.account_addition
+        ).filter(Account.account_user == Token.getidbytoken(user_token)).all()
+        writetofile("accountlist", accountlist, user_token)
+        downloadurl = "/" + str(user_token) + "/data.xls"
+        return jsonify(Info(True, "下载地址获取成功", downloadurl).tojson())
 
     @staticmethod
     @checktoken
