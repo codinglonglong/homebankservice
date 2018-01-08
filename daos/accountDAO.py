@@ -27,6 +27,7 @@ from werkzeug.utils import secure_filename
 from tools.excel import readfromfile
 import os
 import shutil
+from tools.debug import r_set
 
 
 def allowed_file(filename):
@@ -64,7 +65,7 @@ class AccountDAO:
             db.session.delete(ai)
         file = file[0]
         if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
+            filename = "temp.xls"
             if not os.path.exists(importpath + "/" + str(user_token)):
                 os.mkdir(importpath + "/" + str(user_token))
             fileurl = importpath + "/" + str(user_token) + "/" + filename
@@ -87,6 +88,8 @@ class AccountDAO:
             Account.account_item, Account.account_money, Account.account_type,
             Account.account_date, Account.account_addition
         ).filter(Account.account_user == Token.getidbytoken(user_token)).all()
+        if len(accountlist) == 0:
+            return jsonify(Info(False, "无有效账目信息", None).tojson())
         writetofile("accountlist", accountlist, user_token)
         downloadurl = "/" + str(user_token) + "/data.xls"
         return jsonify(Info(True, "下载地址获取成功", downloadurl).tojson())
