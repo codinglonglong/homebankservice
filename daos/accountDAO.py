@@ -25,6 +25,8 @@ from tools.excel import writetofile
 from conf import extvalid
 from werkzeug.utils import secure_filename
 from tools.excel import readfromfile
+import os
+import shutil
 
 
 def allowed_file(filename):
@@ -35,6 +37,21 @@ class AccountDAO:
 
     def __init__(self):
         pass
+
+    @staticmethod
+    def cleantempfiles():
+        tokenlist = db.session.query(User.user_token).all()
+        tokenlist = [x[0] for x in tokenlist if x[0]]
+        filelist = os.listdir(exportpath)
+        for f in filelist:
+            if f not in tokenlist:
+                shutil.rmtree(exportpath + "/" + f)
+        filelist = os.listdir(importpath)
+        for f in filelist:
+            if f not in tokenlist:
+                shutil.rmtree(importpath + "/" + f)
+
+
 
     @staticmethod
     @checktoken
@@ -48,7 +65,9 @@ class AccountDAO:
         file = file[0]
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
-            fileurl = "data/" + filename
+            if not os.path.exists(importpath + "/" + str(user_token)):
+                os.mkdir(importpath + "/" + str(user_token))
+            fileurl = importpath + "/" + str(user_token) + "/" + filename
             file.save(fileurl)
         if readfromfile(fileurl, Token.getidbytoken(user_token)):
             db.session.commit()

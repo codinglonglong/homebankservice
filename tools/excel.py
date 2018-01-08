@@ -10,19 +10,20 @@ import os
 from dbmodels.summaryDBModel import Summary
 from dbmodels.accountDBModel import Account
 from appbase import global_db as db
+from conf import exportpath
 
 
 def writetofile(sheetname, datas, user_token):
-    if os.path.exists("data/" + str(user_token) + "/data.xls"):
-        data = get_data("data/" + str(user_token) + "/data.xls")
+    if os.path.exists(exportpath + "/" + str(user_token) + "/data.xls"):
+        data = get_data(exportpath + "/" + str(user_token) + "/data.xls")
     else:
-        os.mkdir("data/"+str(user_token))
+        os.mkdir(exportpath + "/" + str(user_token))
         data = OrderedDict()
     sheet = []
     for dt in datas:
         sheet.append(dt)
     data.update(OrderedDict({sheetname: sheet}))
-    save_data("data/" + str(user_token) + "/data.xls", data)
+    save_data(exportpath + "/" + str(user_token) + "/data.xls", data)
 
 
 def readfromfile(fileurl, userid):

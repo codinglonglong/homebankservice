@@ -11,6 +11,7 @@ from tools.log import logger
 from tools.token import Token
 from tools.decorator import checktoken
 from sqlalchemy import and_
+from tools.cleaner import cleaner
 
 
 class LoginDAO:
@@ -53,6 +54,7 @@ class LoginDAO:
             logger.error(e)
             return jsonify(Info(False, "数据库错误").tojson())
         else:
+            cleaner()
             return jsonify(Info(True, "用户成功退出").tojson())
 
     @staticmethod

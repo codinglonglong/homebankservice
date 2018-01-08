@@ -1,0 +1,10 @@
+2018-01-08 06:45:54,496	INFO	main	<module>	Line:15	app started
+2018-01-08 06:45:54,506	INFO	_internal	_log	Line:87	 * Running on http://0.0.0.0:9000/ (Press CTRL+C to quit)
+2018-01-08 06:45:54,507	INFO	_internal	_log	Line:87	 * Restarting with stat
+2018-01-08 06:45:54,922	INFO	main	<module>	Line:15	app started
+2018-01-08 06:45:54,932	WARNING	_internal	_log	Line:87	 * Debugger is active!
+2018-01-08 06:45:54,933	INFO	_internal	_log	Line:87	 * Debugger PIN: 326-836-556
+2018-01-08 06:46:06,114	INFO	_internal	_log	Line:87	192.168.99.1 - - [08/Jan/2018 06:46:06] "OPTIONS /login/ HTTP/1.1" 200 -
+2018-01-08 06:46:06,144	INFO	_internal	_log	Line:87	192.168.99.1 - - [08/Jan/2018 06:46:06] "POST /login/ HTTP/1.1" 200 -
+2018-01-08 06:46:06,200	INFO	_internal	_log	Line:87	192.168.99.1 - - [08/Jan/2018 06:46:06] "GET /account/1/f5b7b9fdb7b8dfd66a05fb1397c3391c HTTP/1.1" 200 -
+2018-01-08 06:46:08,093	INFO	_internal	_log	Line:87	192.168.99.1 - - [08/Jan/2018 06:46:08] "GET /login/f5b7b9fdb7b8dfd66a05fb1397c3391c HTTP/1.1" 200 -
